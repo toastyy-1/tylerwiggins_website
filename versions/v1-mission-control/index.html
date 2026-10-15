@@ -1,0 +1,677 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Tyler Wiggins — Aerospace Engineering</title>
+  <meta name="description" content="Tyler Wiggins: aerospace engineering student at the University of Tennessee working on rocket avionics, ground systems, hardware-in-the-loop test, and guidance simulation.">
+  <meta name="theme-color" content="#0b0b0a">
+  <meta property="og:title" content="Tyler Wiggins — Aerospace Engineering">
+  <meta property="og:description" content="Avionics, ground systems, HIL test and guidance simulation for liquid rockets.">
+  <meta property="og:type" content="website">
+  <link rel="icon" href="images/mark.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Martian+Mono:wdth,wght@75..112.5,300..600&family=IBM+Plex+Mono:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <script>document.documentElement.classList.add('js')</script>
+</head>
+<body>
+
+<div class="grid-overlay" aria-hidden="true"><div class="wrap"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div></div>
+
+<!-- ============ TOP BAR ============ -->
+<header class="topbar">
+  <div class="wrap topbar__inner">
+    <a class="mark" href="#top" aria-label="Tyler Wiggins, back to top">
+      <svg viewBox="0 0 32 32" aria-hidden="true"><rect x="1.5" y="1.5" width="29" height="29" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M5 25 C 11 9, 21 6, 27 7" fill="none" stroke="currentColor" stroke-width="1.5"/><rect x="24" y="4" width="6" height="6" fill="#ff5b1a"/></svg>
+      <span>T. WIGGINS</span>
+    </a>
+    <nav class="nav" aria-label="Sections">
+      <a href="#mission"><b>01</b><span>Mission</span></a>
+      <a href="#projects"><b>02</b><span>Projects</span></a>
+      <a href="#record"><b>03</b><span>Record</span></a>
+      <a href="#systems"><b>04</b><span>Systems</span></a>
+      <a href="#contact"><b>05</b><span>Contact</span></a>
+    </nav>
+    <div class="clocks" aria-hidden="true">
+      <span title="Coordinated Universal Time">UTC <b id="utc">--:--:--</b></span>
+      <span class="clocks__met" title="Mission elapsed time since starting at the University of Tennessee, August 2025">MET <b id="met">T+---:--:--:--</b></span>
+    </div>
+  </div>
+</header>
+
+<main id="top">
+
+<!-- ============ HERO ============ -->
+<section class="hero" aria-label="Introduction">
+  <canvas id="orbit" aria-hidden="true"></canvas>
+
+  <div class="wrap hero__top mono">
+    <span>Engineering Portfolio <em>/</em> Rev 2026.10</span>
+    <span class="hide-sm">University of Tennessee — Knoxville</span>
+    <span class="hide-sm">35.9544° N &nbsp;83.9295° W</span>
+  </div>
+
+  <div class="wrap hero__main">
+    <aside class="readout mono" aria-label="Live orbit propagator readout">
+      <div class="readout__head"><i class="lamp"></i>Live propagator <span>RK4 · J2</span></div>
+      <dl>
+        <div><dt>Altitude</dt><dd><b id="ro-alt">—</b> km</dd></div>
+        <div><dt>Velocity</dt><dd><b id="ro-vel">—</b> km/s</dd></div>
+        <div><dt>Inclination</dt><dd><b id="ro-inc">—</b>°</dd></div>
+        <div><dt>RAAN</dt><dd><b id="ro-raan">—</b>°</dd></div>
+        <div><dt>Eccentricity</dt><dd><b id="ro-ecc">—</b></dd></div>
+        <div><dt>Sim time</dt><dd><b id="ro-t">—</b></dd></div>
+      </dl>
+      <p class="readout__note">Integrated in your browser, the same scheme as <a href="#p-02">P-02</a>. J2 exaggerated ×40 so nodal precession is visible.</p>
+    </aside>
+
+    <h1 class="hero__name display">
+      <span>Tyler</span>
+      <span>Wiggins<i class="sq" aria-hidden="true"></i></span>
+    </h1>
+    <p class="hero__sub">Aerospace engineering student at the University of Tennessee. I work on <b>avionics</b>, <b>ground systems</b>, <b>hardware-in-the-loop test</b>, and <b>guidance simulation</b> for liquid rockets.</p>
+  </div>
+
+  <div class="wrap hero__strip">
+    <div class="cell">
+      <span class="mono lbl">Discipline</span>
+      <span>Aerospace Engineering, B.S.</span>
+    </div>
+    <div class="cell">
+      <span class="mono lbl">Focus</span>
+      <span>Avionics · Ground Systems · GN&amp;C · HIL Test</span>
+    </div>
+    <div class="cell">
+      <span class="mono lbl">GPA / Class</span>
+      <span>4.00 / 2029</span>
+    </div>
+    <div class="cell">
+      <span class="mono lbl">Clearance</span>
+      <span>Eligible</span>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 01 MISSION ============ -->
+<section class="section" id="mission">
+  <div class="wrap">
+    <header class="sec-head">
+      <span class="sec-num mono">01</span>
+      <h2 class="sec-title wide">Mission</h2>
+      <span class="sec-meta mono">Statement of work</span>
+    </header>
+
+    <div class="mission">
+      <p class="mission__lead">I build the systems that let rockets be <em>tested</em>, <em>flown</em>, and <em>understood</em>: data acquisition and control on the test stand, telemetry in flight, and the guidance math in between.</p>
+      <div class="mission__body">
+        <p>I study aerospace engineering at the University of Tennessee. Most of my work happens with the Student Space Technology Association (SSTA). I advise on electronics and rocketry subsystems there, and I co-lead command and control for a liquid rocket built to reach 70,000+ ft.</p>
+        <p>Outside the club I write simulation software. My current project is a 6-DoF guidance and dynamics simulator in C++, which SSTA now uses to verify and validate its thrust vector control system.</p>
+      </div>
+    </div>
+
+    <div class="stats">
+      <div class="stat"><span class="stat__num display">70k<sup>+</sup></span><span class="mono">ft target apogee<br>SSTA liquid rocket</span></div>
+      <div class="stat"><span class="stat__num display">5<sup>+</sup></span><span class="mono">Successful test fires<br>procedures co-developed</span></div>
+      <div class="stat"><span class="stat__num display">16</span><span class="mono">Engineers on the<br>C&amp;C team I co-lead</span></div>
+      <div class="stat"><span class="stat__num display">4.00</span><span class="mono">GPA<br>University of Tennessee</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 02 PROJECTS ============ -->
+<section class="section" id="projects">
+  <div class="wrap">
+    <header class="sec-head">
+      <span class="sec-num mono">02</span>
+      <h2 class="sec-title wide">Projects</h2>
+      <span class="sec-meta mono">5 entries · 2025 — present</span>
+    </header>
+
+    <div class="p-index" role="list">
+      <div class="p-index__row p-index__row--head mono" aria-hidden="true">
+        <span>Code</span><span>Designation</span><span class="hide-md">Description</span><span class="hide-sm">Org</span><span class="hide-sm">Period</span><span>Status</span>
+      </div>
+      <a role="listitem" class="p-index__row" href="#p-01"><span class="mono">P-01</span><span class="nm">Big Liquid C&amp;C</span><span class="hide-md">Command and control for a 70k+ ft liquid rocket</span><span class="mono hide-sm">SSTA</span><span class="mono hide-sm">Aug 2025 —</span><span class="mono st st--on">Active</span></a>
+      <a role="listitem" class="p-index__row" href="#p-02"><span class="mono">P-02</span><span class="nm">Orbital Trajectory Sim</span><span class="hide-md">6-DoF guidance and dynamics simulator, C++</span><span class="mono hide-sm">Personal</span><span class="mono hide-sm">Apr 2026 —</span><span class="mono st st--on">Active</span></a>
+      <a role="listitem" class="p-index__row" href="#p-03"><span class="mono">P-03</span><span class="nm">GLASS</span><span class="hide-md">Hardware-in-the-loop test-fire replay system</span><span class="mono hide-sm">SSTA</span><span class="mono hide-sm">May 2026 —</span><span class="mono st st--on">Active</span></a>
+      <a role="listitem" class="p-index__row" href="#p-04"><span class="mono">P-04</span><span class="nm">PHASE</span><span class="hide-md">Flight telemetry controller with LoRa link</span><span class="mono hide-sm">SSTA</span><span class="mono hide-sm">Jan — May 2026</span><span class="mono st">Concluded</span></a>
+      <a role="listitem" class="p-index__row" href="#p-05"><span class="mono">P-05</span><span class="nm">Regen Engine</span><span class="hide-md">Electroformed regeneratively cooled chamber</span><span class="mono hide-sm">SSTA</span><span class="mono hide-sm">Aug 2025 —</span><span class="mono st st--on">Active</span></a>
+    </div>
+
+    <!-- P-01 -->
+    <article class="dossier" id="p-01">
+      <header class="dossier__head">
+        <span class="dossier__code mono">P-01</span>
+        <h3 class="dossier__title wide">Big Liquid C&amp;C</h3>
+        <p class="dossier__sub">Command-and-control platform for SSTA’s 70k+ ft apogee liquid-fueled rocket</p>
+      </header>
+      <div class="dossier__body">
+        <dl class="meta mono">
+          <div><dt>Org</dt><dd>SSTA, Univ. of Tennessee</dd></div>
+          <div><dt>Period</dt><dd>Aug 2025 — Present</dd></div>
+          <div><dt>Role</dt><dd>Co-lead, 16-person team</dd></div>
+          <div><dt>Status</dt><dd class="on">Active</dd></div>
+          <div><dt>Disciplines</dt><dd>DAQ · Controls · Test ops · Systems eng.</dd></div>
+        </dl>
+        <div class="dossier__text">
+          <p class="lede">The ground-side nervous system of the vehicle: it reads every sensor on the stand, fires every trigger, and records the data that tells us how the engine performed.</p>
+          <ul class="bul">
+            <li>Co-led development of the command-and-control platform for the club’s liquid rocket</li>
+            <li>Developed DAQ system infrastructure controlling 8 sensors and 6 triggers</li>
+            <li>Led recovery and analysis of thrust and pressure data to characterize engine performance</li>
+            <li>Helped develop test-fire and launch procedures, enabling 5+ successful test fires</li>
+            <li>Led systems engineering design processes for mission-critical subsystems</li>
+          </ul>
+        </div>
+        <figure class="fig">
+          <svg viewBox="0 0 520 340" role="img" aria-labelledby="f1t">
+            <title id="f1t">Block diagram: the ground station sends commands to and receives telemetry from the DAQ controller, which reads 8 analog sensor channels and drives 6 trigger outputs on the test stand.</title>
+            <defs>
+              <marker id="ah" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L8 4 L0 8 z" class="f-fill-ink"/></marker>
+              <marker id="ahs" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L8 4 L0 8 z" class="f-fill-sig"/></marker>
+            </defs>
+            <rect class="f-line draw" pathLength="1" x="16" y="95" width="120" height="90"/>
+            <text class="f-t f-t--b" x="28" y="120">GROUND</text>
+            <text class="f-t f-t--b" x="28" y="135">STATION</text>
+            <text class="f-t f-t--dim" x="28" y="172">OPERATOR UI</text>
+
+            <rect class="f-sig draw" pathLength="1" x="196" y="40" width="130" height="200"/>
+            <text class="f-t f-t--b f-t--sig" x="208" y="64">DAQ /</text>
+            <text class="f-t f-t--b f-t--sig" x="208" y="79">CONTROLLER</text>
+            <text class="f-t f-t--dim" x="208" y="224">8 IN · 6 OUT</text>
+
+            <line class="f-line" x1="136" y1="128" x2="194" y2="128" marker-end="url(#ahs)" style="stroke:var(--signal)"/>
+            <text class="f-t f-t--dim" x="146" y="120">CMD</text>
+            <line class="f-line" x1="196" y1="156" x2="138" y2="156" marker-end="url(#ah)"/>
+            <text class="f-t f-t--dim" x="146" y="172">TLM</text>
+
+            <path class="f-line draw" pathLength="1" d="M326 140 H352 M352 52 V258"/>
+            <g class="f-line">
+              <path d="M352 52 H382 M352 66 H382 M352 80 H382 M352 94 H382 M352 108 H382 M352 122 H382 M352 136 H382 M352 150 H382"/>
+              <path d="M352 188 H382 M352 202 H382 M352 216 H382 M352 230 H382 M352 244 H382 M352 258 H382"/>
+            </g>
+            <text class="f-t f-t--dim" x="388" y="34">SENSORS ×8</text>
+            <g class="f-t">
+              <text x="402" y="56">AI-01</text><text x="402" y="70">AI-02</text><text x="402" y="84">AI-03</text><text x="402" y="98">AI-04</text>
+              <text x="402" y="112">AI-05</text><text x="402" y="126">AI-06</text><text x="402" y="140">AI-07</text><text x="402" y="154">AI-08</text>
+            </g>
+            <g class="f-fill-ink"><rect x="384" y="49" width="7" height="7"/><rect x="384" y="63" width="7" height="7"/><rect x="384" y="77" width="7" height="7"/><rect x="384" y="91" width="7" height="7"/><rect x="384" y="105" width="7" height="7"/><rect x="384" y="119" width="7" height="7"/><rect x="384" y="133" width="7" height="7"/><rect x="384" y="147" width="7" height="7"/></g>
+            <text class="f-t f-t--dim" x="388" y="178">TRIGGERS ×6</text>
+            <g class="f-t f-t--sig">
+              <text x="402" y="192">DO-01</text><text x="402" y="206">DO-02</text><text x="402" y="220">DO-03</text><text x="402" y="234">DO-04</text><text x="402" y="248">DO-05</text><text x="402" y="262">DO-06</text>
+            </g>
+            <g class="f-fill-sig"><rect x="384" y="185" width="7" height="7"/><rect x="384" y="199" width="7" height="7"/><rect x="384" y="213" width="7" height="7"/><rect x="384" y="227" width="7" height="7"/><rect x="384" y="241" width="7" height="7"/><rect x="384" y="255" width="7" height="7"/></g>
+
+            <path class="f-line" d="M460 160 V300 H336" stroke-dasharray="3 4"/>
+            <rect class="f-line" x="16" y="278" width="320" height="44" stroke-dasharray="3 4"/>
+            <text class="f-t f-t--b" x="28" y="304">TEST STAND · ENGINE · FEED SYSTEM</text>
+          </svg>
+          <figcaption class="mono"><b>Fig 01-A</b> Command and data flow, simplified. Channel labels are generic.</figcaption>
+        </figure>
+      </div>
+      <div class="dstats">
+        <div><span class="display">8</span><span class="mono">Sensor channels</span></div>
+        <div><span class="display">6</span><span class="mono">Trigger outputs</span></div>
+        <div><span class="display">5<sup>+</sup></span><span class="mono">Successful test fires</span></div>
+        <div><span class="display">16</span><span class="mono">Team members</span></div>
+      </div>
+      <div class="plates">
+        <figure class="plate"><img src="images/projects/p01-1.jpg" alt="Big Liquid command and control hardware" loading="lazy" onerror="this.parentNode.hidden=true"><figcaption class="mono">Plate 01-1</figcaption></figure>
+        <figure class="plate"><img src="images/projects/p01-2.jpg" alt="Big Liquid test fire" loading="lazy" onerror="this.parentNode.hidden=true"><figcaption class="mono">Plate 01-2</figcaption></figure>
+      </div>
+    </article>
+
+    <!-- P-02 -->
+    <article class="dossier" id="p-02">
+      <header class="dossier__head">
+        <span class="dossier__code mono">P-02</span>
+        <h3 class="dossier__title wide">Orbital Trajectory &amp; Flight Control Sim</h3>
+        <p class="dossier__sub">A general-purpose 6-DoF rocket guidance and dynamics simulator, written in C++</p>
+      </header>
+      <div class="dossier__body">
+        <dl class="meta mono">
+          <div><dt>Org</dt><dd>Personal project</dd></div>
+          <div><dt>Period</dt><dd>Apr 2026 — Present</dd></div>
+          <div><dt>Role</dt><dd>Sole developer</dd></div>
+          <div><dt>Status</dt><dd class="on">Active · in use by SSTA</dd></div>
+          <div><dt>Stack</dt><dd>C++ · RK4 · J2 · Lambert · 6-DoF</dd></div>
+        </dl>
+        <div class="dossier__text">
+          <p class="lede">Built to scale from a single sounding rocket to point-to-point trajectories around the planet. SSTA selected it to verify and validate its thrust vector control system.</p>
+          <ul class="bul">
+            <li>Scalable, general-purpose 6-DoF rocket guidance and dynamics simulator in C++</li>
+            <li>RK4 integration with J2 gravity perturbations; passes all NASA NESC test cases</li>
+            <li>Staged, Lambert-based guidance system that steers a rocket between two points on Earth</li>
+            <li>Selected by SSTA for V&amp;V of its thrust vector control (TVC) system</li>
+          </ul>
+          <pre class="eq mono" aria-label="J2 perturbing acceleration equation"><span class="eq__lbl">J2 perturbation</span>
+a<sub>J2</sub> = −(3/2)·J<sub>2</sub>·μ·R⊕² / r⁵ ·
+  [ x(1 − 5z²/r²),
+    y(1 − 5z²/r²),
+    z(3 − 5z²/r²) ]</pre>
+        </div>
+        <figure class="fig">
+          <svg viewBox="0 0 520 340" role="img" aria-labelledby="f2t">
+            <title id="f2t">Staged trajectory from a launch point to a target point on Earth's surface: two powered stages, then a ballistic coast arc from the Lambert solution.</title>
+            <defs>
+              <clipPath id="earthclip"><circle cx="260" cy="520" r="340"/></clipPath>
+            </defs>
+            <g clip-path="url(#earthclip)" class="f-dimline">
+              <ellipse cx="260" cy="520" rx="340" ry="120"/>
+              <ellipse cx="260" cy="520" rx="340" ry="230"/>
+              <ellipse cx="260" cy="520" rx="110" ry="340"/>
+              <ellipse cx="260" cy="520" rx="230" ry="340"/>
+              <line x1="260" y1="180" x2="260" y2="340"/>
+            </g>
+            <circle class="f-line draw" pathLength="1" cx="260" cy="520" r="340"/>
+
+            <path class="f-sig f-thick draw" pathLength="1" d="M62 243 Q 66 180 104 140"/>
+            <path class="f-sig draw" pathLength="1" d="M104 140 Q 142 104 196 88"/>
+            <path class="f-line" d="M196 88 C 300 58 420 110 456 243" stroke-dasharray="5 5"/>
+
+            <g class="f-line"><line x1="98" y1="134" x2="110" y2="146"/><line x1="190" y1="80" x2="196" y2="96"/></g>
+            <line class="f-sig" x1="196" y1="88" x2="246" y2="74" marker-end="url(#ahs)"/>
+
+            <circle class="f-fill-sig" cx="62" cy="243" r="4"/>
+            <rect class="f-fill-ink" x="452" y="239" width="8" height="8"/>
+            <circle class="f-line" cx="456" cy="243" r="11"/>
+
+            <text class="f-t f-t--sig" x="24" y="166">STAGE 1</text>
+            <text class="f-t f-t--sig" x="94" y="104">STAGE 2</text>
+            <text class="f-t f-t--dim" x="210" y="62">v<tspan font-size="8" dy="3">bo</tspan><tspan dy="-3"> · LAMBERT SOLN</tspan></text>
+            <text class="f-t f-t--dim" x="330" y="104">BALLISTIC COAST</text>
+            <text class="f-t f-t--b" x="20" y="270">LAUNCH</text>
+            <text class="f-t f-t--dim" x="20" y="284">φ₁, λ₁</text>
+            <text class="f-t f-t--b" x="438" y="275">TARGET</text>
+            <text class="f-t f-t--dim" x="438" y="289">φ₂, λ₂</text>
+            <text class="f-t f-t--dim" x="232" y="326">EARTH · J2 OBLATE</text>
+          </svg>
+          <figcaption class="mono"><b>Fig 02-A</b> Staged Lambert guidance, conceptual. Not to scale.</figcaption>
+        </figure>
+      </div>
+      <div class="dstats">
+        <div><span class="display">6</span><span class="mono">Degrees of freedom</span></div>
+        <div><span class="display">RK4</span><span class="mono">Integrator</span></div>
+        <div><span class="display">100<sup>%</sup></span><span class="mono">NASA NESC cases passed</span></div>
+        <div><span class="display">TVC</span><span class="mono">V&amp;V for SSTA</span></div>
+      </div>
+      <div class="plates">
+        <figure class="plate"><img src="images/projects/p02-1.png" alt="Orbital simulator output plot" loading="lazy" onerror="this.parentNode.hidden=true"><figcaption class="mono">Plate 02-1</figcaption></figure>
+        <figure class="plate"><img src="images/projects/p02-2.png" alt="Orbital simulator trajectory output" loading="lazy" onerror="this.parentNode.hidden=true"><figcaption class="mono">Plate 02-2</figcaption></figure>
+      </div>
+    </article>
+
+    <!-- P-03 -->
+    <article class="dossier" id="p-03">
+      <header class="dossier__head">
+        <span class="dossier__code mono">P-03</span>
+        <h3 class="dossier__title wide">GLASS</h3>
+        <p class="dossier__sub">Hardware-in-the-loop rocketry test replay system</p>
+      </header>
+      <div class="dossier__body">
+        <dl class="meta mono">
+          <div><dt>Org</dt><dd>SSTA, Univ. of Tennessee</dd></div>
+          <div><dt>Period</dt><dd>May 2026 — Present</dd></div>
+          <div><dt>Role</dt><dd>Hardware designer · Team lead (10)</dd></div>
+          <div><dt>Status</dt><dd class="on">Active</dd></div>
+          <div><dt>Disciplines</dt><dd>PCB design · Analog · HIL · V&amp;V</dd></div>
+        </dl>
+        <div class="dossier__text">
+          <p class="lede">GLASS replays real test-fire data back into the flight DAQ. The DAQ sees the same voltages it saw during a hot fire, with no propellant on the stand.</p>
+          <ul class="bul">
+            <li>Designed a 3-board HIL PCB assembly that replays test-fire sensor data into the DAQ for mission simulation</li>
+            <li>Developed an 8-channel DAC-based analog circuit that emulates load cell and pressure transducer outputs</li>
+            <li>Achieved voltage reproduction within 0.02% error while processing data at 50+ Hz</li>
+            <li>Lead the 10-person GLASS team building the software platform for DAQ testing and verification</li>
+          </ul>
+        </div>
+        <figure class="fig">
+          <svg viewBox="0 0 520 340" role="img" aria-labelledby="f3t">
+            <title id="f3t">Signal chain: recorded test-fire log goes to replay software, then an 8-channel DAC, then into the DAQ under test. Below, a side view of the three-board PCB stack and eight analog output traces.</title>
+            <defs>
+              <path id="trace" d="M0 12 H18 C24 12 25 1 31 1 C36 1 38 4 44 3 C60 2 70 4 96 3 C102 3 104 12 110 12 H150"/>
+            </defs>
+            <g class="f-line">
+              <rect class="draw" pathLength="1" x="10" y="36" width="104" height="54"/>
+              <rect class="draw" pathLength="1" x="138" y="36" width="104" height="54"/>
+            </g>
+            <rect class="f-sig draw" pathLength="1" x="266" y="36" width="104" height="54"/>
+            <rect class="f-line" x="394" y="36" width="116" height="54" stroke-dasharray="4 3"/>
+            <text class="f-t f-t--b" x="20" y="58">TEST-FIRE</text><text class="f-t f-t--dim" x="20" y="74">RECORDED LOG</text>
+            <text class="f-t f-t--b" x="148" y="58">REPLAY</text><text class="f-t f-t--dim" x="148" y="74">SOFTWARE</text>
+            <text class="f-t f-t--b f-t--sig" x="276" y="58">8-CH DAC</text><text class="f-t f-t--dim" x="276" y="74">EMULATION</text>
+            <text class="f-t f-t--b" x="404" y="58">DAQ</text><text class="f-t f-t--dim" x="404" y="74">UNDER TEST</text>
+            <g class="f-line"><line x1="114" y1="63" x2="136" y2="63" marker-end="url(#ah)"/><line x1="242" y1="63" x2="264" y2="63" marker-end="url(#ah)"/></g>
+            <line class="f-sig" x1="370" y1="63" x2="392" y2="63" marker-end="url(#ahs)"/>
+            <text class="f-t f-t--dim" x="10" y="122">SECTION A — 3-BOARD STACK</text>
+            <text class="f-t f-t--dim" x="300" y="122">CH 1–8 · ANALOG OUT</text>
+            <line class="f-dimline" x1="10" y1="130" x2="510" y2="130"/>
+
+            <g class="f-line">
+              <line x1="34" y1="160" x2="34" y2="296"/><line x1="226" y1="160" x2="226" y2="296"/>
+            </g>
+            <g>
+              <rect class="f-board" x="16" y="172" width="228" height="8"/>
+              <rect class="f-board" x="16" y="226" width="228" height="8"/>
+              <rect class="f-board f-board--sig" x="16" y="280" width="228" height="8"/>
+              <g class="f-fill-ink"><rect x="60" y="162" width="26" height="10"/><rect x="104" y="166" width="12" height="6"/><rect x="132" y="160" width="40" height="12"/><rect x="186" y="166" width="10" height="6"/>
+              <rect x="56" y="218" width="14" height="8"/><rect x="88" y="214" width="34" height="12"/><rect x="140" y="220" width="12" height="6"/><rect x="170" y="216" width="22" height="10"/>
+              <rect x="64" y="272" width="16" height="8"/><rect x="96" y="270" width="12" height="10"/><rect x="124" y="270" width="12" height="10"/><rect x="152" y="270" width="12" height="10"/><rect x="180" y="270" width="12" height="10"/></g>
+            </g>
+            <g class="f-t f-t--dim"><text x="250" y="180">B1</text><text x="250" y="234">B2</text></g>
+            <text class="f-t f-t--sig" x="250" y="288">B3</text>
+
+            <g class="f-sig f-trace">
+              <use href="#trace" transform="translate(300 142) scale(1.33 1)"/>
+              <use href="#trace" transform="translate(300 164) scale(1.33 .8)"/>
+              <use href="#trace" transform="translate(300 184) scale(1.33 1)"/>
+              <use href="#trace" transform="translate(300 206) scale(1.33 .6)"/>
+              <use href="#trace" transform="translate(300 224) scale(1.33 1)"/>
+              <use href="#trace" transform="translate(300 246) scale(1.33 .7)"/>
+              <use href="#trace" transform="translate(300 264) scale(1.33 .9)"/>
+              <use href="#trace" transform="translate(300 286) scale(1.33 .5)"/>
+            </g>
+          </svg>
+          <figcaption class="mono"><b>Fig 03-A</b> Replay signal chain and board stack, schematic. Traces are illustrative.</figcaption>
+        </figure>
+      </div>
+      <div class="dstats">
+        <div><span class="display">0.02<sup>%</sup></span><span class="mono">Voltage reproduction error</span></div>
+        <div><span class="display">50<sup>+</sup></span><span class="mono">Hz data processing</span></div>
+        <div><span class="display">8</span><span class="mono">Analog channels</span></div>
+        <div><span class="display">3</span><span class="mono">Board assembly</span></div>
+      </div>
+      <div class="plates">
+        <figure class="plate"><img src="images/projects/p03-1.jpg" alt="GLASS PCB assembly" loading="lazy" onerror="this.parentNode.hidden=true"><figcaption class="mono">Plate 03-1</figcaption></figure>
+        <figure class="plate"><img src="images/projects/p03-2.jpg" alt="GLASS board layout" loading="lazy" onerror="this.parentNode.hidden=true"><figcaption class="mono">Plate 03-2</figcaption></figure>
+      </div>
+    </article>
+
+    <!-- P-04 -->
+    <article class="dossier" id="p-04">
+      <header class="dossier__head">
+        <span class="dossier__code mono">P-04</span>
+        <h3 class="dossier__title wide">PHASE</h3>
+        <p class="dossier__sub">Flight telemetry controller for a 70k+ ft apogee rocket</p>
+      </header>
+      <div class="dossier__body">
+        <dl class="meta mono">
+          <div><dt>Org</dt><dd>SSTA, Univ. of Tennessee</dd></div>
+          <div><dt>Period</dt><dd>Jan — May 2026</dd></div>
+          <div><dt>Role</dt><dd>Firmware &amp; telemetry</dd></div>
+          <div><dt>Status</dt><dd>Concluded</dd></div>
+          <div><dt>Disciplines</dt><dd>Embedded firmware · LoRa RF · Digital twin</dd></div>
+        </dl>
+        <div class="dossier__text">
+          <p class="lede">A two-way radio link between the flight computer and the ground, plus a digital twin that turns incoming telemetry into a live prediction of the rest of the flight.</p>
+          <ul class="bul">
+            <li>Contributed to firmware design for a flight telemetry device for a 70k+ ft apogee rocket</li>
+            <li>Implemented a custom LoRa telemetry protocol for bidirectional flight computer / ground station communication</li>
+            <li>Created a data collection and digital twin system for real-time flight prediction and analysis</li>
+          </ul>
+        </div>
+        <figure class="fig">
+          <svg viewBox="0 0 520 340" role="img" aria-labelledby="f4t">
+            <title id="f4t">Flight profile: the measured trajectory is drawn solid up to the vehicle, the digital twin's predicted remainder dashed. A bidirectional LoRa link connects the vehicle and the ground station.</title>
+            <line class="f-line" x1="10" y1="300" x2="510" y2="300"/>
+            <g class="f-dimline"><line x1="30" y1="60" x2="30" y2="300"/><line x1="26" y1="60" x2="34" y2="60"/><line x1="26" y1="180" x2="34" y2="180"/></g>
+            <text class="f-t f-t--dim" x="38" y="56">70k+ FT</text>
+            <text class="f-t f-t--dim" x="38" y="296">0</text>
+
+            <path class="f-ink f-thick draw" pathLength="1" d="M70 300 C 90 200 130 110 196 78"/>
+            <path class="f-line" d="M196 78 C 240 58 280 64 310 110 C 340 160 360 240 372 300" stroke-dasharray="5 5"/>
+            <g transform="translate(196 78) rotate(-28)"><rect class="f-fill-sig" x="-6" y="-6" width="12" height="12"/></g>
+            <circle class="f-sig" cx="196" cy="78" r="13"/>
+
+            <text class="f-t f-t--b" x="106" y="212">MEASURED</text>
+            <text class="f-t f-t--dim" x="350" y="256" text-anchor="end">DIGITAL TWIN</text>
+            <text class="f-t f-t--dim" x="350" y="270" text-anchor="end">PREDICTION</text>
+
+            <g class="f-line">
+              <line x1="460" y1="300" x2="460" y2="248"/><line x1="448" y1="300" x2="460" y2="268"/><line x1="472" y1="300" x2="460" y2="268"/>
+              <path d="M444 238 Q 460 256 478 236"/>
+            </g>
+            <text class="f-t f-t--b" x="410" y="322">GROUND STATION</text>
+
+            <line class="f-sig" x1="210" y1="86" x2="452" y2="236" stroke-dasharray="2 4" marker-end="url(#ahs)"/>
+            <line class="f-line" x1="464" y1="226" x2="222" y2="76" stroke-dasharray="2 4" marker-end="url(#ah)"/>
+            <text class="f-t f-t--sig" x="338" y="200" transform="rotate(32 338 200)">DOWNLINK · TLM</text>
+            <text class="f-t f-t--dim" x="336" y="128" transform="rotate(32 336 128)">UPLINK · CMD</text>
+            <text class="f-t f-t--b f-t--sig" x="430" y="140">LoRa</text>
+          </svg>
+          <figcaption class="mono"><b>Fig 04-A</b> Telemetry link and digital-twin prediction, conceptual.</figcaption>
+        </figure>
+      </div>
+      <div class="dstats">
+        <div><span class="display">2</span><span class="mono">Way link, uplink + downlink</span></div>
+        <div><span class="display">LoRa</span><span class="mono">Custom protocol</span></div>
+        <div><span class="display">70k<sup>+</sup></span><span class="mono">ft apogee vehicle</span></div>
+      </div>
+      <div class="plates">
+        <figure class="plate"><img src="images/projects/p04-1.jpg" alt="PHASE flight controller hardware" loading="lazy" onerror="this.parentNode.hidden=true"><figcaption class="mono">Plate 04-1</figcaption></figure>
+        <figure class="plate"><img src="images/projects/p04-2.jpg" alt="PHASE ground station" loading="lazy" onerror="this.parentNode.hidden=true"><figcaption class="mono">Plate 04-2</figcaption></figure>
+      </div>
+    </article>
+
+    <!-- P-05 -->
+    <article class="dossier" id="p-05">
+      <header class="dossier__head">
+        <span class="dossier__code mono">P-05</span>
+        <h3 class="dossier__title wide">Regen Engine</h3>
+        <p class="dossier__sub">A custom-designed, regeneratively cooled liquid rocket engine</p>
+      </header>
+      <div class="dossier__body">
+        <dl class="meta mono">
+          <div><dt>Org</dt><dd>SSTA, Univ. of Tennessee</dd></div>
+          <div><dt>Period</dt><dd>Aug 2025 — Present</dd></div>
+          <div><dt>Role</dt><dd>Electroforming process</dd></div>
+          <div><dt>Status</dt><dd class="on">Active</dd></div>
+          <div><dt>Disciplines</dt><dd>Fabrication · Electrochemistry · Safety</dd></div>
+        </dl>
+        <div class="dossier__text">
+          <p class="lede">Regenerative cooling routes propellant through channels in the chamber wall before it is burned. Those channels need a structural outer shell, which this team grows onto the copper liner by electroforming.</p>
+          <ul class="bul">
+            <li>Worked on a project team fabricating a custom-designed regenerative liquid rocket engine</li>
+            <li>Formulated an electroforming process using nickel sulfamate to build a shell on the copper combustion chamber</li>
+            <li>Provided technical guidance on the electroforming procedure, safety guidelines, and system components</li>
+          </ul>
+        </div>
+        <figure class="fig">
+          <svg viewBox="0 0 520 300" role="img" aria-labelledby="f5t">
+            <title id="f5t">Half cross-section of a regeneratively cooled thrust chamber: copper liner, coolant channel layer, and an electroformed nickel outer shell, from injector face through throat to nozzle exit.</title>
+            <defs>
+              <pattern id="hatch" width="6" height="6" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><line x1="0" y1="0" x2="0" y2="6" class="f-hatch"/></pattern>
+            </defs>
+            <line class="f-dimline" x1="20" y1="270" x2="510" y2="270" stroke-dasharray="14 4 2 4"/>
+            <text class="f-t f-t--dim" x="460" y="288">℄ AXIS</text>
+
+            <path fill="url(#hatch)" class="f-line" d="M40 114 L200 114 C240 114 255 184 280 184 C320 184 420 144 480 124 L480 100 C420 120 320 160 280 160 C255 160 240 90 200 90 L40 90 Z"/>
+            <path class="f-chan" d="M40 120 L200 120 C240 120 255 190 280 190 C320 190 420 150 480 130 L480 124 C420 144 320 184 280 184 C255 184 240 114 200 114 L40 114 Z"/>
+            <path class="f-cu" d="M40 130 L200 130 C240 130 255 200 280 200 C320 200 420 160 480 140 L480 130 C420 150 320 190 280 190 C255 190 240 120 200 120 L40 120 Z"/>
+            <path class="f-ink f-thick draw" pathLength="1" d="M40 130 L200 130 C240 130 255 200 280 200 C320 200 420 160 480 140"/>
+            <line class="f-line" x1="40" y1="84" x2="40" y2="270"/>
+
+            <g class="f-dimline"><line x1="280" y1="206" x2="280" y2="270" stroke-dasharray="3 3"/></g>
+            <text class="f-t f-t--dim" x="286" y="246">THROAT</text>
+            <text class="f-t f-t--dim" x="46" y="262">INJECTOR FACE</text>
+            <text class="f-t f-t--b" x="110" y="212">COMBUSTION GAS →</text>
+
+            <g class="f-line"><line x1="120" y1="98" x2="150" y2="44"/><line x1="160" y1="117" x2="230" y2="28"/><line x1="96" y1="125" x2="96" y2="64"/></g>
+            <g class="f-fill-ink"><circle cx="120" cy="98" r="2"/><circle cx="160" cy="117" r="2"/><circle cx="96" cy="125" r="2"/></g>
+            <text class="f-t f-t--b" x="154" y="44">ELECTROFORMED Ni SHELL</text>
+            <text class="f-t f-t--dim" x="234" y="28">COOLANT CHANNELS</text>
+            <text class="f-t f-t--sig" x="20" y="60">Cu LINER</text>
+            <text class="f-t f-t--dim" x="380" y="120" transform="rotate(-11 380 120)">← COOLANT</text>
+          </svg>
+          <figcaption class="mono"><b>Fig 05-A</b> Regen chamber wall build-up, half section. Not to scale.</figcaption>
+        </figure>
+      </div>
+      <div class="dstats">
+        <div><span class="display">Ni</span><span class="mono">Sulfamate electroform</span></div>
+        <div><span class="display">Cu</span><span class="mono">Combustion chamber liner</span></div>
+        <div><span class="display">Regen</span><span class="mono">Cooled architecture</span></div>
+      </div>
+      <div class="plates">
+        <figure class="plate"><img src="images/projects/p05-1.jpg" alt="Regenerative engine chamber" loading="lazy" onerror="this.parentNode.hidden=true"><figcaption class="mono">Plate 05-1</figcaption></figure>
+        <figure class="plate"><img src="images/projects/p05-2.jpg" alt="Electroforming setup" loading="lazy" onerror="this.parentNode.hidden=true"><figcaption class="mono">Plate 05-2</figcaption></figure>
+      </div>
+    </article>
+  </div>
+</section>
+
+<!-- ============ 03 RECORD ============ -->
+<section class="section" id="record">
+  <div class="wrap">
+    <header class="sec-head">
+      <span class="sec-num mono">03</span>
+      <h2 class="sec-title wide">Record</h2>
+      <span class="sec-meta mono">Experience · Education</span>
+    </header>
+
+    <div class="tl" id="timeline" aria-label="Timeline of education, experience and projects, 2024 to 2029">
+      <div class="tl__axis mono" aria-hidden="true">
+        <span class="tl__lbl"></span>
+        <div class="tl__years"><span>2024</span><span>2025</span><span>2026</span><span>2027</span><span>2028</span><span>2029</span><b class="tl__now">Now</b></div>
+      </div>
+      <div class="tl__row" data-start="2025-08" data-end="2029-05"><span class="tl__lbl mono">B.S. Aerospace Eng. — UTK</span><div class="tl__track"></div></div>
+      <div class="tl__row" data-start="2024-06" data-end="2024-07"><span class="tl__lbl mono">ORNL STEM Academy</span><div class="tl__track"></div></div>
+      <div class="tl__row" data-start="2025-08" data-end="now"><span class="tl__lbl mono">SSTA — Subject Matter Expert</span><div class="tl__track"></div></div>
+      <div class="tl__row tl__row--p" data-start="2025-08" data-end="now"><span class="tl__lbl mono">P-01 Big Liquid C&amp;C</span><div class="tl__track"></div></div>
+      <div class="tl__row tl__row--p" data-start="2025-08" data-end="now"><span class="tl__lbl mono">P-05 Regen Engine</span><div class="tl__track"></div></div>
+      <div class="tl__row tl__row--p" data-start="2026-01" data-end="2026-05"><span class="tl__lbl mono">P-04 PHASE</span><div class="tl__track"></div></div>
+      <div class="tl__row tl__row--p" data-start="2026-04" data-end="now"><span class="tl__lbl mono">P-02 Orbital Sim</span><div class="tl__track"></div></div>
+      <div class="tl__row tl__row--p" data-start="2026-05" data-end="now"><span class="tl__lbl mono">P-03 GLASS</span><div class="tl__track"></div></div>
+      <div class="tl__row" data-start="2026-06" data-end="2026-08"><span class="tl__lbl mono">Firecrown Media — Intern</span><div class="tl__track"></div></div>
+    </div>
+
+    <div class="entries">
+      <article class="entry">
+        <span class="entry__when mono">Aug 2025 — Present</span>
+        <div class="entry__what">
+          <h3 class="wide">Subject Matter Expert</h3>
+          <p class="mono">Student Space Technology Association · University of Tennessee</p>
+        </div>
+        <ul class="bul">
+          <li>Provide technical guidance and design feedback on electronics projects and rocketry subsystems</li>
+          <li>Co-lead a 16-person team developing a command-and-control system for a liquid-fueled rocket</li>
+          <li>Presented at preliminary and critical design reviews; helped implement club-wide systems engineering</li>
+          <li>Manage version control and code reviews as a member of the club’s software development team</li>
+        </ul>
+      </article>
+      <article class="entry">
+        <span class="entry__when mono">Jun — Aug 2026</span>
+        <div class="entry__what">
+          <h3 class="wide">IT &amp; AV Intern</h3>
+          <p class="mono">Firecrown Media Inc. · Chattanooga, TN</p>
+        </div>
+        <ul class="bul">
+          <li>Managed employee database access and gave technical support across company IT and AV infrastructure</li>
+          <li>Coordinated with the media and events team to deploy an event app for 1,000+ attendees at FreightWaves F3</li>
+        </ul>
+      </article>
+      <article class="entry">
+        <span class="entry__when mono">Summer 2024</span>
+        <div class="entry__what">
+          <h3 class="wide">Appalachian STEM Academy</h3>
+          <p class="mono">Oak Ridge National Laboratory · Oak Ridge, TN</p>
+        </div>
+        <ul class="bul">
+          <li>Took part in a research project on neutron flux using Monte Carlo simulation analysis</li>
+          <li>Presented results by research poster and oral presentation to a cohort audience of 100+</li>
+        </ul>
+      </article>
+      <article class="entry entry--edu">
+        <span class="entry__when mono">Aug 2025 — May 2029</span>
+        <div class="entry__what">
+          <h3 class="wide">B.S. Aerospace Engineering</h3>
+          <p class="mono">University of Tennessee · Knoxville, TN</p>
+        </div>
+        <div class="entry__gpa"><span class="display">4.00</span><span class="mono">/ 4.00 GPA</span></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 04 SYSTEMS ============ -->
+<section class="section" id="systems">
+  <div class="wrap">
+    <header class="sec-head">
+      <span class="sec-num mono">04</span>
+      <h2 class="sec-title wide">Systems</h2>
+      <span class="sec-meta mono">Capabilities sheet</span>
+    </header>
+
+    <div class="spec">
+      <div class="spec__cell">
+        <span class="spec__hd mono"><b>4.1</b> Languages <i>04</i></span>
+        <ul><li>C</li><li>C++</li><li>Python</li><li>MATLAB</li></ul>
+      </div>
+      <div class="spec__cell">
+        <span class="spec__hd mono"><b>4.2</b> Electronics &amp; RF <i>05</i></span>
+        <ul><li>KiCad</li><li>PCB design</li><li>Analog / DAC circuits</li><li>Embedded firmware</li><li>RF telemetry · LoRa</li></ul>
+      </div>
+      <div class="spec__cell">
+        <span class="spec__hd mono"><b>4.3</b> Analysis <i>05</i></span>
+        <ul><li>6-DoF dynamics</li><li>Orbital mechanics</li><li>Lambert guidance</li><li>Numerical integration</li><li>Monte Carlo methods</li></ul>
+      </div>
+      <div class="spec__cell">
+        <span class="spec__hd mono"><b>4.4</b> Test &amp; Systems <i>05</i></span>
+        <ul><li>DAQ &amp; controls</li><li>Hardware-in-the-loop</li><li>Test-fire procedures</li><li>Design reviews (PDR / CDR)</li><li>Systems engineering</li></ul>
+      </div>
+      <div class="spec__cell">
+        <span class="spec__hd mono"><b>4.5</b> Tools <i>04</i></span>
+        <ul><li>SolidWorks</li><li>Git · code review</li><li>Linux</li><li>Electroforming</li></ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 05 CONTACT ============ -->
+<section class="section section--contact" id="contact">
+  <div class="wrap">
+    <header class="sec-head">
+      <span class="sec-num mono">05</span>
+      <h2 class="sec-title wide">Contact</h2>
+      <span class="sec-meta mono">Channel open</span>
+    </header>
+
+    <p class="contact__big display">Open a channel<i class="sq" aria-hidden="true"></i></p>
+    <p class="contact__note">Seeking internship and co-op roles in avionics, GN&amp;C, test, and flight software.</p>
+
+    <div class="links">
+      <a class="link" href="mailto:tyler.wiggins2006@gmail.com">
+        <span class="mono">Email</span>
+        <b>tyler.wiggins2006@gmail.com</b>
+        <i aria-hidden="true">→</i>
+      </a>
+      <a class="link" href="https://www.linkedin.com/in/tylerhwiggins" target="_blank" rel="noopener">
+        <span class="mono">LinkedIn</span>
+        <b>in/tylerhwiggins</b>
+        <i aria-hidden="true">↗</i>
+      </a>
+      <a class="link link--sig" href="files/Tyler-Wiggins-Resume.pdf" download>
+        <span class="mono">Resume · PDF · 42 KB</span>
+        <b>Download résumé</b>
+        <i aria-hidden="true">↓</i>
+      </a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="foot">
+  <div class="wrap foot__inner mono">
+    <span>End of document</span>
+    <span>TW-Portfolio · Rev 2026.10</span>
+    <span>© 2026 Tyler Wiggins</span>
+    <a href="#top">Return to T−0 ↑</a>
+  </div>
+</footer>
+
+<script src="js/orbit.js" defer></script>
+<script src="js/main.js" defer></script>
+</body>
+</html>

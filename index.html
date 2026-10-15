@@ -1,0 +1,260 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Tyler Wiggins — Aerospace Engineering</title>
+  <meta name="description" content="Tyler Wiggins: aerospace engineering student at the University of Tennessee working on rocket avionics, ground systems, hardware-in-the-loop test, and guidance simulation.">
+  <meta name="theme-color" content="#0b0b0a">
+  <meta property="og:title" content="Tyler Wiggins — Aerospace Engineering">
+  <meta property="og:description" content="Avionics, ground systems, HIL test and guidance simulation for liquid rockets.">
+  <meta property="og:type" content="website">
+  <link rel="icon" href="images/mark.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Martian+Mono:wdth,wght@75..112.5,300..600&family=IBM+Plex+Mono:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap top__inner">
+    <a class="top__name" href="#">Tyler Wiggins</a>
+    <nav class="top__nav" aria-label="Sections">
+      <a href="#projects">Projects</a>
+      <a href="#experience">Experience</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+  <section class="hero" aria-label="Introduction">
+    <canvas id="orbit" aria-hidden="true"></canvas>
+    <div class="wrap hero__text">
+      <h1>Tyler Wiggins</h1>
+      <p>Aerospace engineering student at the University of Tennessee. I work on avionics, ground systems, test hardware, and guidance software for liquid rockets.</p>
+      <p class="links">
+        <a href="mailto:tyler.wiggins2006@gmail.com">Email</a>
+        <a href="https://www.linkedin.com/in/tylerhwiggins" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="files/Tyler-Wiggins-Resume.pdf" download>Résumé (PDF)</a>
+      </p>
+    </div>
+    <div class="wrap">
+      <section class="elements" aria-label="Live osculating orbital elements">
+        <header class="elements__head">
+          <span>Osculating elements <span data-el="met"></span></span>
+          <span class="elements__how">RK4 live</span>
+        </header>
+        <div class="el-group">
+          <h2>Shape</h2>
+          <dl>
+            <div><dt title="Semi-major axis">a</dt><dd data-el="a">—</dd></div>
+            <div><dt title="Eccentricity">e</dt><dd data-el="e">—</dd></div>
+            <div><dt>Period</dt><dd data-el="period">—</dd></div>
+          </dl>
+        </div>
+        <div class="el-group">
+          <h2>Orientation</h2>
+          <dl>
+            <div><dt title="Inclination">Inc</dt><dd data-el="inc">—</dd></div>
+            <div><dt title="Right ascension of the ascending node">RAAN</dt><dd data-el="raan">—</dd></div>
+            <div><dt title="Argument of periapsis">Arg Pe</dt><dd data-el="argp">—</dd></div>
+          </dl>
+        </div>
+        <div class="el-group">
+          <h2>State</h2>
+          <dl>
+            <div><dt title="True anomaly">ν</dt><dd data-el="nu">—</dd></div>
+            <div><dt>Alt</dt><dd data-el="alt">—</dd></div>
+            <div><dt>Speed</dt><dd data-el="v">—</dd></div>
+          </dl>
+        </div>
+        <div class="el-group">
+          <h2>Apsides</h2>
+          <dl>
+            <div><dt title="Periapsis altitude">Pe</dt><dd data-el="pe">—</dd></div>
+            <div><dt title="Apoapsis altitude">Ap</dt><dd data-el="ap">—</dd></div>
+            <div><dt title="Specific orbital energy">Energy</dt><dd data-el="energy">—</dd></div>
+          </dl>
+        </div>
+        <div class="el-group">
+          <h2>J2 drift</h2>
+          <dl>
+            <div><dt title="RAAN drift measured from the simulation at ascending-node crossings">Ω̇ sim</dt><dd data-el="raanSim">—</dd></div>
+            <div><dt title="RAAN drift predicted by first-order J2 theory from mean elements">Ω̇ theory</dt><dd data-el="raanJ2">—</dd></div>
+            <div><dt title="Apsidal drift predicted by first-order J2 theory">ω̇ theory</dt><dd data-el="argpJ2">—</dd></div>
+          </dl>
+        </div>
+      </section>
+    </div>
+  </section>
+
+  <!-- Projects -->
+  <section class="section" id="projects">
+    <div class="wrap">
+      <h2 class="label">Projects</h2>
+
+      <article class="project">
+        <figure class="photo" data-label="Big Liquid C&amp;C">
+          <img src="images/projects/p01-1.jpg" alt="Big Liquid command and control hardware" loading="lazy" onerror="this.parentNode.classList.add('empty')">
+        </figure>
+        <div class="project__body">
+          <h3>Big Liquid Command &amp; Control</h3>
+          <p class="meta">SSTA · Aug 2025 – Present · Co-lead</p>
+          <p>The command-and-control platform for SSTA’s liquid-fueled rocket, which targets a 70,000+ ft apogee. It reads the sensors on the test stand, fires the triggers, and records the data used to judge engine performance.</p>
+          <ul>
+            <li>Built DAQ infrastructure controlling 8 sensors and 6 triggers</li>
+            <li>Led recovery and analysis of thrust and pressure data</li>
+            <li>Helped write the test-fire and launch procedures behind 5+ successful test fires</li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="project">
+        <figure class="photo" data-label="Orbital Trajectory Sim">
+          <img src="images/projects/p02-1.png" alt="Output from the orbital trajectory simulator" loading="lazy" onerror="this.parentNode.classList.add('empty')">
+        </figure>
+        <div class="project__body">
+          <h3>Orbital Trajectory &amp; Flight Control Sim</h3>
+          <p class="meta">Personal project · Apr 2026 – Present · C++</p>
+          <p>A general-purpose 6-DoF rocket guidance and dynamics simulator. SSTA selected it to verify and validate its thrust vector control system.</p>
+          <ul>
+            <li>RK4 integration with J2 gravity perturbations; passes all NASA NESC test cases</li>
+            <li>Staged, Lambert-based guidance that steers a rocket between two points on Earth</li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="project">
+        <figure class="photo" data-label="GLASS">
+          <img src="images/projects/p03-1.jpg" alt="GLASS hardware-in-the-loop PCB assembly" loading="lazy" onerror="this.parentNode.classList.add('empty')">
+        </figure>
+        <div class="project__body">
+          <h3>GLASS</h3>
+          <p class="meta">SSTA · May 2026 – Present · Hardware design, team lead</p>
+          <p>A hardware-in-the-loop system that replays recorded test-fire data into the DAQ. The DAQ can be tested against real hot-fire signals without propellant on the stand.</p>
+          <ul>
+            <li>Designed a 3-board PCB assembly with an 8-channel DAC emulating load cells and pressure transducers</li>
+            <li>Voltage reproduction within 0.02% error at 50+ Hz</li>
+            <li>Lead the 10-person team building the test and verification software</li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="project">
+        <figure class="photo" data-label="PHASE">
+          <img src="images/projects/p04-1.jpg" alt="PHASE flight telemetry hardware" loading="lazy" onerror="this.parentNode.classList.add('empty')">
+        </figure>
+        <div class="project__body">
+          <h3>PHASE Flight Controller</h3>
+          <p class="meta">SSTA · Jan – May 2026 · Firmware &amp; telemetry</p>
+          <p>A flight telemetry device for a 70,000+ ft apogee rocket.</p>
+          <ul>
+            <li>Implemented a custom LoRa protocol for two-way flight computer / ground station communication</li>
+            <li>Built a data collection and digital twin system for real-time flight prediction</li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="project">
+        <figure class="photo" data-label="Regen Engine">
+          <img src="images/projects/p05-1.jpg" alt="Regeneratively cooled rocket engine chamber" loading="lazy" onerror="this.parentNode.classList.add('empty')">
+        </figure>
+        <div class="project__body">
+          <h3>Regenerative Rocket Engine</h3>
+          <p class="meta">SSTA · Aug 2025 – Present · Fabrication</p>
+          <p>A custom-designed, regeneratively cooled liquid rocket engine.</p>
+          <ul>
+            <li>Formulated a nickel sulfamate electroforming process to build the outer shell on the copper combustion chamber</li>
+            <li>Provided guidance on the electroforming procedure, safety guidelines, and system components</li>
+          </ul>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- Experience -->
+  <section class="section" id="experience">
+    <div class="wrap">
+      <h2 class="label">Experience</h2>
+      <div class="row">
+        <span class="row__when">Aug 2025 – Present</span>
+        <div>
+          <h3>Subject Matter Expert</h3>
+          <p class="meta">Student Space Technology Association, University of Tennessee</p>
+          <p>Technical guidance on electronics and rocketry subsystems. I co-lead the 16-person command-and-control team, present at design reviews, and handle version control and code review for the software team.</p>
+        </div>
+      </div>
+      <div class="row">
+        <span class="row__when">Jun – Aug 2026</span>
+        <div>
+          <h3>IT &amp; AV Intern</h3>
+          <p class="meta">Firecrown Media Inc., Chattanooga, TN</p>
+          <p>Managed employee database access and supported IT and AV infrastructure. Deployed an event app for 1,000+ attendees at FreightWaves F3.</p>
+        </div>
+      </div>
+      <div class="row">
+        <span class="row__when">Summer 2024</span>
+        <div>
+          <h3>Appalachian STEM Academy</h3>
+          <p class="meta">Oak Ridge National Laboratory</p>
+          <p>Research project on neutron flux using Monte Carlo simulation. Presented the results by poster and talk to 100+ attendees.</p>
+        </div>
+      </div>
+      <div class="row">
+        <span class="row__when">2025 – 2029</span>
+        <div>
+          <h3>B.S. Aerospace Engineering</h3>
+          <p class="meta">University of Tennessee, Knoxville · GPA 4.00</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section class="section" id="about">
+    <div class="wrap">
+      <h2 class="label">About</h2>
+      <div class="about">
+        <figure class="photo photo--portrait" data-label="Portrait">
+          <img src="images/portrait.jpg" alt="Tyler Wiggins" loading="lazy" onerror="this.parentNode.classList.add('empty')">
+        </figure>
+        <div class="about__text">
+          <p>I like the parts of rocketry where hardware and software meet: the DAQ on the test stand, the radio link in flight, and the math that says where the vehicle should go.</p>
+          <p>Most of my work happens with the Student Space Technology Association at UT. I’m looking for internship and co-op roles in avionics, GN&amp;C, test, and flight software.</p>
+          <dl class="skills">
+            <div><dt>Languages</dt><dd>C, C++, Python, MATLAB</dd></div>
+            <div><dt>Hardware</dt><dd>KiCad, PCB design, embedded firmware, RF telemetry</dd></div>
+            <div><dt>Analysis</dt><dd>6-DoF dynamics, orbital mechanics, Monte Carlo</dd></div>
+            <div><dt>Tools</dt><dd>SolidWorks, Git, Linux</dd></div>
+            <div><dt>Clearance</dt><dd>Eligible</dd></div>
+          </dl>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section class="section section--last" id="contact">
+    <div class="wrap">
+      <h2 class="label">Contact</h2>
+      <p class="contact"><a href="mailto:tyler.wiggins2006@gmail.com">tyler.wiggins2006@gmail.com</a></p>
+      <p class="links">
+        <a href="https://www.linkedin.com/in/tylerhwiggins" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="files/Tyler-Wiggins-Resume.pdf" download>Résumé (PDF)</a>
+      </p>
+    </div>
+  </section>
+
+</main>
+
+<footer class="foot">
+  <div class="wrap">© 2026 Tyler Wiggins</div>
+</footer>
+
+<script src="js/orbit.js" defer></script>
+</body>
+</html>
